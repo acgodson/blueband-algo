@@ -1,0 +1,57 @@
+{
+  "name": "shindg-vector-db",
+  "author": "tinybird",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "gpt"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "<3.9": {
+      "*": [
+        "_ts3.4/*"
+      ]
+    }
+  },
+  "dependencies": {
+    "@lighthouse-web3/sdk": "^0.3.2",
+    "axios": "^1.6.8",
+    "chai": "^5.1.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^8.2.0",
+    "gpt-tokenizer": "^2.1.2",
+    "json-colorizer": "^2.2.2",
+    "openai": "^3.2.1",
+    "turndown": "^7.1.2",
+    "uuid": "^9.0.0",
+    "yargs": "^17.7.2"
+  },
+  "resolutions": {},
+  "devDependencies": {
+    "@types/assert": "^1.5.3",
+    "@types/dotenv": "^8.2.0",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.31",
+    "@types/turndown": "^5.0.1",
+    "@types/uuid": "9.0.1",
+    "@types/yargs": "17.0.24",
+    "mocha": "10.2.0",
+    "nyc": "^15.1.0",
+    "shx": "^0.3.2",
+    "ts-mocha": "10.0.0",
+    "typescript": "5.3.3"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "build:cjs": "tsc --project tsconfig.build.json",
+    "clean": "rimraf dist dist  node_modules",
+    "lint": "eslint **/src/**/*.{j,t}s{,x} --fix --no-error-on-unmatched-pattern"
+  },
+  "files": [
+    "_ts3.4",
+    "dist",
+    "src"
+  ]
+}
