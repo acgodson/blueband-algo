@@ -1,7 +1,7 @@
 {
   "name": "shindg-vector-db",
   "author": "tinybird",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "keywords": [
     "gpt"
@@ -27,6 +27,7 @@
     "turndown": "^7.1.2",
     "uuid": "^9.0.0",
     "yargs": "^17.7.2"
+    
   },
   "resolutions": {},
   "devDependencies": {

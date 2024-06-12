@@ -50,7 +50,7 @@ export async function addDocuments(
       const prefix = `Buni${appID}`;
       const response = await indexerClient
         .searchForAssets()
-        .creator(agent)
+        .creator(agent) 
         .name(prefix)
         .do();
 
@@ -75,7 +75,7 @@ export async function addDocuments(
         .do();
 
       if (response.assets.length > 0) {
-        const assetID = response.assets[0].index;
+        const assetID = response.assets[response.assets.length - 1].index;
         console.log(`Found Asset ID: ${assetID}`);
 
         const txResponse = await indexerClient
@@ -115,7 +115,7 @@ export async function addDocuments(
           .do();
 
         if (response.assets.length > 0) {
-          const assetID = response.assets[0].index;
+          const assetID = response.assets[response.assets.length - 1].index;
           console.log(`Found Asset ID: ${assetID}`);
 
           const txResponse = await indexerClient
@@ -133,7 +133,6 @@ export async function addDocuments(
               "No asset creation transactions found for the specified asset ID."
             );
           }
-
           return responseCID;
         }
       } catch (e) {
@@ -151,7 +150,7 @@ export async function addDocuments(
   const indexInstance = new LocalDocumentIndex({
     indexName: indexName,
     apiKey: apiKey,
-    agent: "0x5D75A8d20ddDA716e716ff2a138c06727365d247",
+    agent,
     embeddings,
     isCatalog: isCatalog,
     _getDocumentId: getDocumentID,
@@ -249,7 +248,7 @@ export async function queryIndex(
         .do();
 
       if (response.assets.length > 0) {
-        const assetID = response.assets[0].index;
+        const assetID = response.assets[response.assets.length - 1].index;
         console.log(`Found Asset ID: ${assetID}`);
 
         const txResponse = await indexerClient
@@ -289,7 +288,7 @@ export async function queryIndex(
           .do();
 
         if (response.assets.length > 0) {
-          const assetID = response.assets[0].index;
+          const assetID = response.assets[response.assets.length - 1].index;
           console.log(`Found Asset ID: ${assetID}`);
 
           const txResponse = await indexerClient
